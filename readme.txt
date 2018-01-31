@@ -24,4 +24,7 @@ $yee->commit(); // changes are not sent to the bulb before commit() is called
 sleep(10);
 $yee->set_rgb(0x00FF00)->set_bright(100)->commit(); // calls return the object for fast chaining of commands
 
+$status = $yee->get_prop("power")->commit(); // get current status
+print_r($status);
+
 $yee->disconnect();
